@@ -84,3 +84,6 @@ Net-Lab/
 
 Individual labs may include their own README, topology files, configurations, scripts, test results, and troubleshooting notes.
 
+## Disclaimer
+
+This repository is created for education and lab experimentation. Configurations should be reviewed and adapted before being used in a production environment. Product names and trademarks belong to their respective owners.
