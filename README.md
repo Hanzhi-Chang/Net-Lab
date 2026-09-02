@@ -84,3 +84,14 @@ Net-Lab/
 
 Individual labs may include their own README, topology files, configurations, scripts, test results, and troubleshooting notes.
 
+## About the Author
+
+I am Hanzhi Chang, a CCIE Enterprise Infrastructure-certified network engineer currently pursuing an MSc in Computer Science at University College Dublin. My background also includes a Master's degree in Cyberspace Security and hands-on experience in an Internet service provider environment, where I supported enterprise network deployment, operations, migration, and troubleshooting.
+
+Alongside routing and switching, I work with Python, Ansible, Linux, and network automation, and I hold RHCE, CKA, and NVIDIA-Certified Professional AI Networking (NCP-AIN) certifications. My AI networking background extends from traditional data-centre networking into infrastructure for high-performance AI workloads, including NVIDIA Spectrum-X and InfiniBand fabrics, RoCE, congestion management, telemetry, Kubernetes integration, troubleshooting, and automation.
+
+My interests lie at the intersection of enterprise networking, Linux, cloud-native systems, and AI infrastructure. Through Net-Lab, I turn technical knowledge and practical experience into structured, reproducible labs that others can study, test, and improve.
+
+## Disclaimer
+
+This repository is created for education and lab experimentation. Configurations should be reviewed and adapted before being used in a production environment. Product names and trademarks belong to their respective owners.
