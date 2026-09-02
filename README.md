@@ -95,3 +95,7 @@ My interests lie at the intersection of enterprise networking, Linux, cloud-nati
 ## Disclaimer
 
 This repository is created for education and lab experimentation. Configurations should be reviewed and adapted before being used in a production environment. Product names and trademarks belong to their respective owners.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
