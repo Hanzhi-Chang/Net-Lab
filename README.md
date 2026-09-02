@@ -6,7 +6,7 @@
 Net-Lab is a learning-focused repository for exploring how networks are designed, configured, verified, and troubleshot. It connects networking theory with reproducible lab work across Cisco technologies, Cumulus Linux, and Linux networking.
 
 > [!NOTE]
-> This repository is a work in progress. Topics and labs will be added and refined as my learning continues.
+> The study material behind this repository has already been completed. It is now being reorganized and transformed into clear, reproducible labs for publication on GitHub, with content released progressively as this process is completed.
 
 ## Why I Created This Project
 
@@ -74,13 +74,6 @@ The repository is planned to follow this structure as it develops:
 ```text
 Net-Lab/
 ├── cisco/
-│   ├── fundamentals/
-│   ├── switching/
-│   ├── routing/
-│   ├── services/
-│   ├── security/
-│   ├── data-center/
-│   └── automation/
 ├── cumulus-linux/
 ├── linux-networking/
 ├── assets/
@@ -91,7 +84,3 @@ Net-Lab/
 
 Individual labs may include their own README, topology files, configurations, scripts, test results, and troubleshooting notes.
 
-## Project Principles
-
-- **Understand before configuring:** Explain why a technology or command is used.
-- **Make results reproducible:** Document the topology, addressing, dependencies, and verification steps.
