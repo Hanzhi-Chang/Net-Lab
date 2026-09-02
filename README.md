@@ -1,1 +1,97 @@
 # Net-Lab
+
+
+**A practical, evolving collection of network engineering notes, labs, configurations, and troubleshooting exercises.**
+
+Net-Lab is a learning-focused repository for exploring how networks are designed, configured, verified, and troubleshot. It connects networking theory with reproducible lab work across Cisco technologies, Cumulus Linux, and Linux networking.
+
+> [!NOTE]
+> This repository is a work in progress. Topics and labs will be added and refined as my learning continues.
+
+## Why I Created This Project
+
+I created Net-Lab with two main goals:
+
+- **Learn in public:** Organize what I have learned, turn theory into practical experiments, and improve my understanding through clear technical documentation.
+- **Share and collaborate:** Provide useful material for people who are learning networking or preparing to enter the field, while exchanging ideas and feedback with network engineers and learners around the world.
+
+Writing a configuration is only one part of network engineering. For that reason, this project also focuses on explaining design choices, verifying expected behaviour, investigating failures, and recording lessons learned.
+
+## Project Scope
+
+### Cisco Networking
+
+This is currently the main area of the repository. Planned topics include:
+
+- Network fundamentals and architecture
+- Layer 2 switching, VLANs, trunking, EtherChannel, and spanning tree
+- IPv4 and IPv6 routing
+- RIP, EIGRP, OSPF, IS-IS, and BGP
+- MPLS, VPNs, and WAN technologies
+- Multicast and Quality of Service
+- Network security and Cisco ASA
+- Wireless networking
+- Network services and system management
+- Cisco Nexus and data-centre networking
+- Software-defined networking and network automation
+- Python, Ansible, NETCONF, RESTCONF, YANG, and related tools
+
+### Cumulus Linux
+
+This section will document my journey into open networking with Cumulus Linux. It will begin with fundamental system and interface operations, then develop toward switching, routing, configuration management, and troubleshooting.
+
+### Linux Networking
+
+This section will explore the Linux networking knowledge and tools that are useful to network engineers, including:
+
+- Interface, address, route, and neighbour management
+- Network namespaces, bridges, VLANs, and virtual Ethernet interfaces
+- Connectivity and path-testing tools
+- Packet capture and traffic analysis
+- DNS, sockets, ports, and common network services
+- Firewalling and packet filtering
+- Performance monitoring and troubleshooting
+
+## What Each Lab Will Include
+
+Where applicable, each lab will contain:
+
+1. **Objectives** — what the lab is intended to demonstrate.
+2. **Prerequisites** — the required concepts, software, and platform.
+3. **Topology** — a diagram and an addressing plan.
+4. **Device configurations** — complete configurations or clearly documented configuration changes.
+5. **Concept explanation** — the important ideas behind the implementation.
+6. **Verification** — commands, expected output, and connectivity tests.
+7. **Troubleshooting** — common issues or an intentionally introduced fault, supported by evidence and analysis.
+8. **Lessons learned** — conclusions, limitations, and possible improvements.
+
+The aim is to make the labs understandable, repeatable, and useful beyond a single successful configuration.
+
+## Repository Structure
+
+The repository is planned to follow this structure as it develops:
+
+```text
+Net-Lab/
+├── cisco/
+│   ├── fundamentals/
+│   ├── switching/
+│   ├── routing/
+│   ├── services/
+│   ├── security/
+│   ├── data-center/
+│   └── automation/
+├── cumulus-linux/
+├── linux-networking/
+├── assets/
+│   └── topologies/
+├── scripts/
+└── README.md
+```
+
+Individual labs may include their own README, topology files, configurations, scripts, test results, and troubleshooting notes.
+
+## Project Principles
+
+- **Understand before configuring:** Explain why a technology or command is used.
+- **Make results reproducible:** Document the topology, addressing, dependencies, and verification steps.
