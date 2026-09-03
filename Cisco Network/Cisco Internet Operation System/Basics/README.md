@@ -74,8 +74,6 @@ This directory covers the complete system-management scope for Cisco IOS and IOS
 - Control Plane Policing to protect device control-plane resources.
 - Management Plane Protection to restrict where management traffic is accepted.
 
-## Relationship to the Basics Module
-
-The [Basics](./Basics/) directory covers only the first section of this system-management material. The remaining sections extend from initial device operation into secure access, change management, observability, troubleshooting, automation, and infrastructure protection.
+## Disclaimer
 
 Commands and behaviour can differ between classic IOS, IOS XE, device families, and software releases. Each detailed document or lab should identify the platform and version used for validation.
