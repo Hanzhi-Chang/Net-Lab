@@ -1,79 +1,90 @@
-# Cisco IOS System Management
+# Cisco IOS Basics
 
-This directory covers the complete system-management scope for Cisco IOS and IOS XE devices. It explains how a device operates and is administered before routing, switching, and network services are added: how the system boots, where it stores files and configurations, how engineers gain and control access, how changes are recorded, how operational data is collected, and how faults are investigated.
+This module introduces the operating-system, storage, boot, software image, and licensing foundations of Cisco IOS and IOS XE devices. It corresponds specifically to the **Cisco IOS Basics** section of the system-management material.
 
-> [!IMPORTANT]
-> Many people preparing for CCNA, people without professional network experience, and people who have not worked directly with Cisco equipment may not realise how important these foundations are. Some of the topics receive little attention in an exam blueprint, but they are encountered in day-to-day network operations. It is possible to study advanced technologies such as OSPF, BGP, and multicast while still being unable to manage software images, recover device access, interpret logs, verify time, or collect troubleshooting evidence. That gap can make it difficult to demonstrate practical readiness and can become a barrier to obtaining a first network role.
+## 1. Cisco IOS and IOS XE
 
-## Main Content
+- The classic IOS software architecture and the relationship between the operating system, processes, memory, and CPU resources.
+- IOS XE as a Linux-based system in which IOS services run as processes.
+- Modular IOS XE software packaging and the role of platform packages described in the source material:
+  - `RPBase` for route-processor operating-system functions.
+  - `RPControl` for control-plane interaction between IOS and the platform.
+  - `RPAccess` for access services such as SSH and SSL.
+  - `RPIOS` for the Cisco IOS software component.
+  - `ESPBase` for Embedded Services Processor functions and data-plane services.
+  - `SIPBase` for SPA Interface Processor operating-system and control functions.
+  - `SIPSPA` for SPA drivers and field-programmable-device support.
+- The consolidated package that contains the complete set of software packages.
 
-### [Cisco IOS Basics](./Basics/)
+Package names and installation models vary across IOS XE platforms and releases, so detailed procedures must be checked against the documentation for the device being used.
 
-- Classic IOS and IOS XE architecture and software packaging.
-- Cisco filesystems, storage, configuration-register behaviour, and the boot process.
-- ROMMON, software-image transfer and upgrade, image verification, boot selection, licensing, and basic host or service testing.
+## 2. Cisco IOS Filesystem
 
-### Device Access and Security
+- The purpose of the IOS filesystem and filesystem prefixes.
+- Storage locations and their roles:
+  - Flash memory for system images and persistent files.
+  - NVRAM for the startup configuration on platforms that use it.
+  - ROM or bootstrap storage for bootstrap and recovery software.
+  - SDRAM for the running system and running configuration.
+- Opaque, network, disk, and NVRAM filesystem types.
+- Read-only, read-write, and write-only file permissions.
+- Access to local storage and external servers through IOS file operations.
 
-- Console and remote CLI access.
-- User EXEC and privileged EXEC modes and their protection.
-- Local users, passwords, privilege levels, and access-control methods.
-- Password recovery for Cisco routers and switches.
-- Telnet and SSH server and client operation.
+## 3. Configuration Register
 
-### Authentication, Authorisation, and Accounting
+- The configuration register as a platform setting separate from the startup and running configurations.
+- Its 16-bit hexadecimal representation.
+- Boot-field selection, console speed, break behaviour, and recovery-related settings.
+- Common legacy IOS examples such as the normal `0x2102` value and `0x2142` for temporarily ignoring the startup configuration during password recovery.
 
-- The purpose and operation of AAA.
-- Local authentication on Cisco IOS routers and switches.
-- Authentication method lists and fallback behaviour.
-- Local command authorisation and IOS privilege levels.
-- TACACS+ integration with a Linux CentOS server.
+Configuration-register support and defaults are platform-dependent. Modern IOS XE devices may use different recovery and boot mechanisms.
 
-### Configuration Management
+## 4. IOS Boot Process
 
-- Copying or merging configuration into the running configuration.
-- Saving, backing up, and restoring configurations.
-- Configuration archives, snapshots, comparison, and rollback.
-- Configuration-change notification and command logging.
+- Power-on self-test.
+- Loading and running bootstrap software.
+- Locating and loading a system image from flash memory.
+- Entering ROMMON when a usable image cannot be loaded.
+- Loading the startup configuration into the running configuration.
+- The purpose of ROMMON for image recovery and password-recovery procedures.
+- Image selection and the role of boot configuration.
 
-### Logging and Monitoring
+## 5. Upgrading an IOS Image
 
-- Cisco IOS syslog messages, severity levels, timestamps, and logging destinations.
-- Simple Network Management Protocol concepts and operation.
-- NetFlow traffic visibility and flow records.
-- Interface optical-power monitoring and transceiver diagnostics.
+- Transferring an image with TFTP, FTP, or SCP.
+- Checking available flash space before copying an image.
+- Backing up the existing image before a change.
+- Understanding the Cisco device as the client when the `copy` operation uses an external file server.
+- Verifying image integrity with an MD5 checksum where supported.
+- Selecting the new image with a boot-system configuration.
+- Confirming the image and boot settings before reloading the device.
 
-### Network Time
+An image change should be planned with a compatibility check, a verified backup, a maintenance window, console access, and a recovery path.
 
-- Cisco Network Time Protocol configuration and operation.
-- NTP unicast, multicast, and broadcast behaviour.
-- NTP authentication, NTPv4, and troubleshooting.
-- Precision Time Protocol concepts and forwarding modes.
+## 6. IOS Licensing
 
-### Device Discovery Protocols
+- The historical relationship between IOS images, feature sets, and separately licensed technology packages.
+- Base functionality and additional feature activation.
+- Device identification with UDI, PID, and serial-number information.
+- Traditional PAK registration and `.lic` licence-file installation.
+- Evaluation or trial licences described in the source material.
 
-- Cisco Discovery Protocol operation and neighbour information.
-- Link Layer Discovery Protocol operation and interoperability.
+Cisco licensing has changed significantly across product families and software generations. The licensing model in use must be confirmed for the specific platform and release rather than inferred from a legacy IOS workflow.
 
-### Troubleshooting and Diagnostics
+## 7. Router as a Host or Service-Test Client
 
-- A structured troubleshooting process and evidence collection.
-- Ping and traceroute behaviour on Cisco IOS.
-- Conditional debug for targeted diagnostics.
-- MTU and Path MTU troubleshooting.
-- Cisco Embedded Packet Capture.
-- ERSPAN configuration on Cisco IOS XE.
+- Using an IOS device to test reachability to a TCP service.
+- Using `telnet <ip-address> <port>` as a simple check that a destination TCP port can be reached and accepts a connection.
+- Interpreting the result as a service-path test rather than proof that the complete application is healthy.
 
-### Performance and Automation
+## Expected Outcomes
 
-- Cisco IOS Embedded Event Manager policies and event-driven actions.
-- Combining IP SLA and EEM for monitoring and automated response.
+After completing this module, the reader should be able to:
 
-### Security and Control-Plane Protection
-
-- Control Plane Policing to protect device control-plane resources.
-- Management Plane Protection to restrict where management traffic is accepted.
-
-## Disclaimer
-
-Commands and behaviour can differ between classic IOS, IOS XE, device families, and software releases. Each detailed document or lab should identify the platform and version used for validation.
+- Distinguish the main architectural ideas behind classic IOS and IOS XE.
+- Identify common storage locations and explain which files they contain.
+- Explain how the configuration register can affect boot and recovery.
+- Describe the IOS boot sequence and the purpose of ROMMON.
+- Prepare and verify the essential steps of a software-image change.
+- Identify the licensing information that must be checked for a device and release.
+- Perform a basic TCP service-reachability test from the IOS CLI.
