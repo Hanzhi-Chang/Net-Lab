@@ -4,8 +4,6 @@
 
 This directory is the main Cisco-focused area of Net-Lab. It connects networking concepts with the tasks performed on real devices: navigating the operating system, building configurations, checking operational state, collecting evidence, diagnosing failures, and recovering safely from mistakes.
 
-The material is intended to complement certification study rather than reproduce an exam blueprint. Some topics receive limited attention in certification courses but are encountered regularly in day-to-day network operations.
-
 > [!NOTE]
 > The study material behind this section has already been completed. It is being reorganized into concise documentation, command references, reusable configurations, and reproducible labs, which will be published progressively.
 
