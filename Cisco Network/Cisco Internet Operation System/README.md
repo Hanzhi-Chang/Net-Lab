@@ -74,6 +74,24 @@ This directory covers the complete system-management scope for Cisco IOS and IOS
 - Control Plane Policing to protect device control-plane resources.
 - Management Plane Protection to restrict where management traffic is accepted.
 
+## Content Structure
+
+Topic and module directories will normally use the following structure where it is useful:
+
+```text
+module-name/
+├── docs/
+├── labs/
+└── config/
+```
+
+- `README.md` explains the module purpose, scope, prerequisites, and navigation.
+- `docs/` contains concept explanations, operational guidance, and focused command references.
+- `labs/` contains Markdown lab guides with objectives, topologies, configurations, validation, and troubleshooting.
+- `config/` contains standalone device configurations and supporting artifacts such as topology images and EVE-NG lab files.
+
+Not every module needs every directory. The structure should follow the material rather than create empty placeholders.
+
 ## Disclaimer
 
 Commands and behaviour can differ between classic IOS, IOS XE, device families, and software releases. Each detailed document or lab should identify the platform and version used for validation.
