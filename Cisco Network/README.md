@@ -68,25 +68,6 @@ Controller-based networking, APIs, Python, Ansible, NETCONF, RESTCONF, YANG, tel
 
 Supporting material for EVE-NG, virtual machines, packet capture, network utilities, configuration comparison, and other tools used to build and investigate the labs.
 
-## Content Structure
-
-Topic and module directories will normally use the following structure where it is useful:
-
-```text
-module-name/
-├── README.md
-├── docs/
-├── labs/
-└── config/
-```
-
-- `README.md` explains the module purpose, scope, prerequisites, and navigation.
-- `docs/` contains concept explanations, operational guidance, and focused command references.
-- `labs/` contains Markdown lab guides with objectives, topologies, configurations, validation, and troubleshooting.
-- `config/` contains standalone device configurations and supporting artifacts such as topology images and EVE-NG lab files.
-
-Not every module needs every directory. The structure should follow the material rather than create empty placeholders.
-
 ## Lab Standard
 
 Where applicable, a lab should include:
