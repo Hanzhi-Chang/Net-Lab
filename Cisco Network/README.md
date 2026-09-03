@@ -44,9 +44,13 @@ Services and operational functions such as DHCP, DNS-related behaviour, NAT, NTP
 
 WAN technologies, provider and enterprise connectivity, MPLS concepts, tunnelling, and VPN technologies, supported by topology-based configuration and verification.
 
-### Multicast and Quality of Service
+### [Multicast](./Multicast/)
 
-Multicast forwarding and control-plane behaviour, traffic classification, marking, queuing, policing, shaping, congestion management, and evidence-based validation.
+Multicast addressing, receiver membership with IGMP, Layer 2 multicast forwarding, Reverse Path Forwarding, PIM operation, Rendezvous Point design and discovery, multicast policy, and troubleshooting.
+
+### Quality of Service
+
+Traffic classification, marking, queuing, policing, shaping, congestion management, and evidence-based validation.
 
 ### Security
 
