@@ -36,6 +36,8 @@ Ethernet switching, VLANs, trunks, EtherChannel, spanning tree, Layer 2 protecti
 
 IPv4 and IPv6 forwarding, static routing, route selection, redistribution, and dynamic routing with RIP, EIGRP, OSPF, IS-IS, and BGP.
 
+- [IPv4 Directed Broadcast on Cisco IOS](./IP%20Routing/Directed%20Broadcast.md) — last-hop broadcast conversion, default security behaviour, ACL control, packet-capture verification, and rollback.
+
 ### Network Services and System Management
 
 Services and operational functions such as DHCP, DNS-related behaviour, NAT, NTP, SNMP, syslog, NetFlow, device discovery, configuration backup, image management, and routine health checks.
