@@ -223,3 +223,13 @@ The expression used by `begin`, `include`, `exclude`, and `section` can be a sim
 ## Next Step
 
 After completing this warmup, continue with [Cisco Internetwork Operating System (IOS)](./Cisco%20Internet%20Operation%20System/) to learn the system-management foundations used throughout later labs.
+
+## References and Further Reading
+
+The explanations in this guide are based primarily on Cisco's official documentation. Command availability and behaviour can vary by platform and software release, so use context-sensitive help and consult the documentation for the device and image used in a lab.
+
+- [Using the Cisco IOS Command-Line Interface](https://www.cisco.com/c/en/us/td/docs/routers/ios-xe/system-management/system-management/m_cf-cli-basics.html) — CLI modes, navigation, context-sensitive help, command completion, and editing features.
+- [Cisco IOS XE Document Conventions](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/software/release/17-17/configuration_guide/sys_mgmt/b_1717_sys_mgmt_9300_cg/m_pref.html) — Cisco's notation for keywords, user-supplied arguments, optional elements, and required choices.
+- [Cisco IOS Configuration Fundamentals Command Reference: `do`](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/command/cf_command_ref/D_through_E.html) — syntax, command modes, restrictions, and examples for running EXEC commands from configuration mode.
+- [Using Cisco IOS XE Software: Filtering Output](https://www.cisco.com/c/en/us/td/docs/routers/access/isr1100/software/configuration/guide/isr1100-sw-config/using_iosxe_software.html) — pipe filters and regular expressions for `show` and `more` command output.
+- [Cisco IOS Configuration Fundamentals Command Reference: `show` Output Filters](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/command/Cisco_IOS_Configuration_Fundamentals_Command_Reference/show_through_show_fm_summary.html) — detailed reference for `begin`, `include`, `exclude`, and `section`.
