@@ -12,26 +12,6 @@ Cisco IOS XE preserves the familiar IOS command-line interface and feature set w
 
 IOS XE is used across several Cisco enterprise product families. Common examples include Catalyst 9000 switches, ISR 4000 routers, ASR 1000 routers, Catalyst 8000 Edge Platforms, and virtual or cloud-based Catalyst 8000V instances. Product names alone must not be used to infer the operating system: for example, the ASR 9000 family uses IOS XR, while Nexus switches normally use NX-OS.
 
-### Architecture at a Glance
-
-| Area | Classic IOS | IOS XE |
-| --- | --- | --- |
-| Foundation | Cisco's traditional integrated network operating system | Linux-based operating system with IOS functions provided primarily by IOSd |
-| Process model | Many functions share a common kernel and memory space | IOSd and other services run as separate processes with greater isolation |
-| CLI | Traditional IOS CLI | Largely compatible IOS CLI, with additional platform-specific commands |
-| Software packaging | Usually operated as a single system-image file | Distributed as a consolidated image that can be expanded into individual packages |
-| Maintenance | Image changes commonly require a complete reload | Supports install workflows and, on supported platforms and releases, targeted patches such as Software Maintenance Upgrades (SMUs) |
-| Programmability | Primarily CLI- and SNMP-oriented, depending on release | Adds modern interfaces such as NETCONF, RESTCONF, YANG models, and streaming telemetry where supported |
-
-### IOS XE Software Packages
-
-An IOS XE release is commonly downloaded as a consolidated `.bin` image containing the packages required by the platform. The way the device uses that image depends on its boot mode:
-
-- In **bundle mode**, the device boots directly from the consolidated `.bin` file and extracts the required components into memory during startup.
-- In **install mode**, the consolidated image is expanded into individual `.pkg` files in local storage. The device then boots by reading `packages.conf`, which identifies the packages that belong to the installed release.
-
-Install mode is the normal choice on many current IOS XE platforms because it can improve boot and memory efficiency and is required for some servicing capabilities. Support, commands, and upgrade procedures remain platform- and release-specific. A package-based architecture does not mean that an engineer can arbitrarily upgrade any `.pkg` file; supported release upgrades and patches must use the documented install workflow.
-
 ### CLI Compatibility and Operational Checks
 
 Much of the classic IOS CLI remains available in IOS XE, which makes existing operational knowledge transferable. The two systems are not identical, however. Command availability, output, defaults, and feature behaviour can vary between operating systems, platforms, licences, and releases. This guide therefore labels platform-specific commands where necessary instead of treating IOS and IOS XE as interchangeable.
@@ -63,7 +43,7 @@ The `show processes` commands focus mainly on IOS or IOSd activity. On IOS XE, p
 
 In the examples in this repository, lines beginning with `!` are annotations or visual separators and are not commands to enter. Cisco configurations commonly use `!` as a section separator, but it should not be treated as a universal comment syntax equivalent to `#` in a programming language.
 
-Official background: [Cisco networking software overview](https://www.cisco.com/c/en/us/products/ios-nx-os-software/index.html) and [Cisco IOS XE bundle and install modes](https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/ios-xe-17/ios-xe-bundle-boot-pb.html).
+Official background: [Cisco networking software overview](https://www.cisco.com/c/en/us/products/ios-nx-os-software/index.html).
 
 ## 2. Cisco IOS Filesystem
 
