@@ -29,7 +29,7 @@ Cisco documentation uses typographic symbols to distinguish literal keywords fro
 | *Italic* | A parameter that must be replaced with a value appropriate to the device or lab. | *interface-id* |
 | `{ }` | A required element or a required choice. Select one of the enclosed alternatives. | `{ active or standby }` |
 | `[ ]` | An optional element. The command can be entered with or without it. | `[ detail ]` |
-| `|` | Separates mutually exclusive alternatives in command syntax. Select one alternative. | `active | standby` |
+| `\|` | Separates mutually exclusive alternatives in command syntax. Select one alternative. | `active \| standby` |
 
 For example:
 
