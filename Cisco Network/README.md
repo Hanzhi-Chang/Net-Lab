@@ -89,7 +89,12 @@ Commands and feature behaviour can differ across IOS, IOS XE, NX-OS, hardware pl
 
 ## Suggested Starting Point
 
-Begin with [Cisco Internetwork Operating System (IOS)](./Cisco%20Internet%20Operation%20System/) if you have limited hands-on experience with Cisco equipment. It establishes the operational foundation needed before moving into larger switching, routing, security, and automation labs.
+Follow this reading order before moving into the technology-specific material:
+
+1. **Read [Warmup and Conventions](./WARMUP.md) first.** This guide establishes the conventions used throughout the Cisco Network section and introduces the basic ideas needed to follow later material, including the command-line interface (CLI), device prompts and operating modes, command syntax, and how to use the documentation, labs, and configuration files.
+2. **Continue with [Cisco Internetwork Operating System (IOS)](./Cisco%20Internet%20Operation%20System/).** This section establishes the operational foundation for working with Cisco devices, including system architecture, filesystems, boot behaviour, access, configuration management, monitoring, diagnostics, and recovery.
+
+After completing these two starting points, continue to the switching, routing, multicast, security, wireless, data-centre, or automation material relevant to the topic being studied.
 
 ## Disclaimer
 
