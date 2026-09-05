@@ -37,6 +37,7 @@ Ethernet switching, VLANs, trunks, EtherChannel, spanning tree, Layer 2 protecti
 IPv4 and IPv6 forwarding, static routing, route selection, redistribution, and dynamic routing with RIP, EIGRP, OSPF, IS-IS, and BGP.
 
 - [IPv4 Directed Broadcast on Cisco IOS](./IP%20Routing/Directed%20Broadcast.md) — last-hop broadcast conversion, default security behaviour, ACL control, packet-capture verification, and rollback.
+- [Routing Policy Matching on Cisco IOS](./IP%20Routing/Routing%20Policies/) — wildcard masks, ACLs, prefix lists, route maps, BGP AS-path matching, offset lists, and Policy-Based Routing.
 
 ### Network Services and System Management
 
