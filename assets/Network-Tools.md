@@ -543,8 +543,8 @@ Nmap reports six port states:
 | `closed` | The port is reachable, but no application is listening. |
 | `filtered` | Filtering prevents Nmap from determining whether the port is open or closed. |
 | `unfiltered` | The port is reachable, but the selected scan cannot determine whether it is open or closed. |
-| `open|filtered` | The selected scan cannot distinguish an open port from a filtered port. |
-| `closed|filtered` | The selected scan cannot distinguish a closed port from a filtered port. |
+| `open\|filtered` | The selected scan cannot distinguish an open port from a filtered port. |
+| `closed\|filtered` | The selected scan cannot distinguish a closed port from a filtered port. |
 
 ### Scan techniques
 
