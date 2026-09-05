@@ -77,7 +77,8 @@ Net-Lab/
 ├── cumulus-linux/
 ├── linux-networking/
 ├── assets/
-│   ├── My-Tools/
+│   ├── My-tools.md
+│   ├── Network-Tools.md
 │   └── topologies/
 ├── scripts/
 └── README.md
@@ -87,7 +88,7 @@ Individual labs may include their own README, topology files, configurations, sc
 
 ## Tools and Workflow
 
-See [My Tools](./assets/My-Tools/) for the applications I use to design topologies, build virtual labs, access device consoles, analyse packets, and write the documentation in this repository.
+See [My Tools](./assets/My-tools.md) for the applications I use to design topologies, build virtual labs, access device consoles, analyse packets, and write the documentation in this repository. [Common Network Tools](./assets/Network-Tools.md) provides a practical command reference for connectivity testing, route inspection, packet analysis, performance measurement, file-transfer labs, and authorised network discovery.
 
 ## About the Author
 
