@@ -40,7 +40,7 @@ This is currently the main area of the repository. Planned topics include:
 
 This section will document my journey into open networking with Cumulus Linux. It will begin with fundamental system and interface operations, then develop toward switching, routing, configuration management, and troubleshooting.
 
-### Linux Networking
+### [Linux Networking](./Linux%20Networking/)
 
 This section will explore the Linux networking knowledge and tools that are useful to network engineers, including:
 
@@ -51,6 +51,11 @@ This section will explore the Linux networking knowledge and tools that are usef
 - DNS, sockets, ports, and common network services
 - Firewalling and packet filtering
 - Performance monitoring and troubleshooting
+
+Available material currently covers:
+
+- [Linux Network Configuration and Management](./Linux%20Networking/Network%20Configuration%20with%20NetworkManager.md) — interface naming, addresses, routes, sockets, connectivity tests, and persistent configuration with NetworkManager.
+- [How Data Travels from a NIC to the Linux Protocol Stack](./Linux%20Networking/Kernel%20Packet%20Reception.md) — DMA, receive rings, interrupts, NAPI, softirqs, socket buffers, protocol registration, and delivery to applications.
 
 ## What Each Lab Will Include
 
@@ -69,18 +74,19 @@ The aim is to make the labs understandable, repeatable, and useful beyond a sing
 
 ## Repository Structure
 
-The repository is planned to follow this structure as it develops:
+The repository currently follows this high-level structure:
 
 ```text
 Net-Lab/
-├── cisco/
-├── cumulus-linux/
-├── linux-networking/
+├── Cisco Network/
+├── Linux Networking/
+│   ├── README.md
+│   ├── Kernel Packet Reception.md
+│   └── Network Configuration with NetworkManager.md
 ├── assets/
 │   ├── My-tools.md
-│   ├── Network-Tools.md
-│   └── topologies/
-├── scripts/
+│   └── Network-Tools.md
+├── LICENSE
 └── README.md
 ```
 
