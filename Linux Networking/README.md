@@ -14,10 +14,15 @@ Inspect interfaces, addresses, routes, sockets, and reachability with `ip`, `ss`
 
 Follow the Linux receive path from a NIC and DMA receive ring through hardware interrupts, NAPI, `NET_RX_SOFTIRQ`, `sk_buff`, protocol registration, the IP and transport layers, and finally a user-space socket. An appendix introduces the C pointers, function pointers, and callback registration patterns used in the examples.
 
+### [TCP MSS, IP MTU, and Ethernet MTU Lab](./MSS%20and%20MTU.md)
+
+Reproduce MTU-dependent behavior in EVE-NG with Linux hosts and Cisco routers. The lab uses packet captures to verify PMTUD, ICMP `Fragmentation Needed`, IPv4 fragmentation, a PMTUD black hole, TCP MSS adjustment, and an Ethernet interface MTU mismatch.
+
 ## Suggested Reading Order
 
 1. Start with [Linux Network Configuration and Management](./Network%20Configuration%20with%20NetworkManager.md) to build confidence inspecting live network state and managing persistent settings.
 2. Continue with [the kernel packet-reception guide](./Kernel%20Packet%20Reception.md) to understand what happens below those user-space tools when a packet arrives.
+3. Complete the [TCP MSS, IP MTU, and Ethernet MTU lab](./MSS%20and%20MTU.md) to apply those inspection and packet-path concepts in a controlled troubleshooting scenario.
 
 The command syntax, persistent configuration method, and kernel implementation can vary by Linux distribution, software release, driver, and hardware platform. Confirm the local interface names and network-management service before changing a system, and test disruptive changes through console access or another recovery path whenever possible.
 
