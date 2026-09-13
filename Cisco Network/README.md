@@ -2,105 +2,78 @@
 
 **Practical documentation and reproducible labs for configuring, operating, verifying, and troubleshooting Cisco networks.**
 
-This directory is the main Cisco-focused area of Net-Lab. It connects networking concepts with the tasks performed on real devices: navigating the operating system, building configurations, checking operational state, collecting evidence, diagnosing failures, and recovering safely from mistakes.
+This directory is the Cisco-focused part of Net-Lab. It currently contains CLI and IOS foundations, a complete baseline campus-network lab, focused IP-routing guides, and an IP-multicast overview. Additional material will be added progressively as it is reorganised and validated.
 
-> [!NOTE]
-> The study material behind this section has already been completed. It is being reorganized into concise documentation, command references, reusable configurations, and reproducible labs, which will be published progressively.
+The goal is not to collect commands in isolation. Each technical guide explains what a feature does, how it affects forwarding, how to verify the operational state, and which limitations or failure cases matter in a lab or production-style workflow.
 
-## Who This Section Is For
+## Current Content
 
-- Learners preparing for CCNA or progressing toward professional-level Cisco study.
-- People who understand networking theory but have had limited access to Cisco devices.
-- Junior engineers building confidence with the Cisco CLI and common operational workflows.
-- Practitioners looking for focused command references, verification methods, and troubleshooting exercises.
+### Start Here
 
-This is not an exam-cram collection. The aim is to show what a command changes, how to prove that it worked, what can go wrong, and how to investigate the result.
+- [Warmup and Conventions](./WARMUP.md) introduces the Cisco CLI, operating modes, command syntax, context-sensitive help, command completion, and output filtering. Read this first if you are new to Cisco devices or to the conventions used in this repository.
+- [Cisco IOS System Management](./Cisco%20Internet%20Operation%20System/) is the index and roadmap for IOS and IOS XE operational topics.
+- [Cisco IOS Basics](./Cisco%20Internet%20Operation%20System/Basics/docs.md) is the currently published system-management module. It covers IOS and IOS XE architecture, filesystems, the configuration register, boot behaviour, image upgrades, licensing, and basic router host services.
 
-## Main Content
+### Integrated Lab
 
-The Cisco Network section is being organized around the following areas:
+- [Small Campus Network: Baseline Design and Configuration](./Campus%20Network/) builds a layered network from access switches to a Cisco ASA and two simulated ISP paths. It includes the topology, addressing plan, reusable configurations, verification evidence, known limitations, and a roadmap for later improvements.
 
-### [Cisco Internetwork Operating System (IOS)](./Cisco%20Internet%20Operation%20System/)
-
-Device and operating-system fundamentals that support everyday administration: IOS and IOS XE architecture, filesystems, boot behaviour, software images, licensing, device access, configuration management, logging, monitoring, time synchronisation, discovery protocols, diagnostics, and management-plane protection.
-
-### Network Fundamentals and Architecture
-
-Network models, forwarding behaviour, addressing, device roles, campus and enterprise architecture, and the design principles required to understand later labs.
-
-- [Small Campus Network: Baseline Design and Configuration](./Campus%20Network/) — a layered access-to-ASA lab covering VLANs, dual-homed access, Rapid PVST+, HSRP, DHCP, OSPF, dynamic NAT, and two simulated ISP paths.
-
-### Switching
-
-Ethernet switching, VLANs, trunks, EtherChannel, spanning tree, Layer 2 protection, and the verification and troubleshooting of common campus switching problems.
+  The current baseline demonstrates VLAN segmentation, dual-homed access switches, Rapid PVST+, Port Security, HSRP gateway load sharing, DHCP, inter-VLAN routing, OSPF, ASA security zones, source-specific dynamic NAT, and a verified VLAN 10 path to a simulated Internet destination.
 
 ### IP Routing
 
-IPv4 and IPv6 forwarding, static routing, route selection, redistribution, and dynamic routing with RIP, EIGRP, OSPF, IS-IS, and BGP.
+- [IPv4 Directed Broadcast on Cisco IOS](./IP%20Routing/Directed%20Broadcast.md) explains last-hop broadcast conversion, the secure default behaviour, optional ACL control, packet-capture verification, cleanup, and regression testing.
+- [Routing Policy Matching on Cisco IOS](./IP%20Routing/Routing%20Policies.md) compares ACLs, wildcard masks, prefix lists, route maps, BGP AS-path matching, offset lists, and Policy-Based Routing according to the object being matched and the feature consuming the result.
 
-- [IPv4 Directed Broadcast on Cisco IOS](./IP%20Routing/Directed%20Broadcast.md) — last-hop broadcast conversion, default security behaviour, ACL control, packet-capture verification, and rollback.
-- [Routing Policy Matching on Cisco IOS](./IP%20Routing/Routing%20Policies.md) — wildcard masks, ACLs, prefix lists, route maps, BGP AS-path matching, offset lists, and Policy-Based Routing.
+### IP Multicast
 
-### Network Services and System Management
+- [IP Multicast](./Multicast/) currently provides a structured overview of multicast addressing, IGMP, Layer 2 multicast forwarding, Reverse Path Forwarding, PIM, Rendezvous Point design and discovery, policy controls, and troubleshooting topics. Focused multicast labs will be added later.
 
-Services and operational functions such as DHCP, DNS-related behaviour, NAT, NTP, SNMP, syslog, NetFlow, device discovery, configuration backup, image management, and routine health checks.
+## Repository Map
 
-### WAN, MPLS, and VPN
+| Path | Current purpose |
+| --- | --- |
+| [`WARMUP.md`](./WARMUP.md) | CLI introduction and repository command conventions |
+| [`Cisco Internet Operation System/`](./Cisco%20Internet%20Operation%20System/) | IOS and IOS XE system-management index |
+| [`Cisco Internet Operation System/Basics/docs.md`](./Cisco%20Internet%20Operation%20System/Basics/docs.md) | Published IOS fundamentals module |
+| [`Campus Network/`](./Campus%20Network/) | Baseline campus lab, evidence, and publication configurations |
+| [`IP Routing/Directed Broadcast.md`](./IP%20Routing/Directed%20Broadcast.md) | Directed-broadcast concept and packet-capture lab |
+| [`IP Routing/Routing Policies.md`](./IP%20Routing/Routing%20Policies.md) | Routing-policy matching reference |
+| [`Multicast/`](./Multicast/) | Current multicast topic overview |
 
-WAN technologies, provider and enterprise connectivity, MPLS concepts, tunnelling, and VPN technologies, supported by topology-based configuration and verification.
+## Suggested Reading Order
 
-### [Multicast](./Multicast/)
+1. Start with [Warmup and Conventions](./WARMUP.md) to understand the CLI notation used throughout the repository.
+2. Continue with [Cisco IOS Basics](./Cisco%20Internet%20Operation%20System/Basics/docs.md) for device, filesystem, boot, image, and licensing fundamentals.
+3. Work through the [Small Campus Network](./Campus%20Network/) lab to connect Layer 2 switching, first-hop redundancy, routing, DHCP, firewalling, and NAT in one topology.
+4. Use the two [IP Routing](./IP%20Routing/) guides for focused forwarding and policy study.
+5. Read the [IP Multicast](./Multicast/) overview before the future multicast configuration labs are added.
 
-Multicast addressing, receiver membership with IGMP, Layer 2 multicast forwarding, Reverse Path Forwarding, PIM operation, Rendezvous Point design and discovery, multicast policy, and troubleshooting.
+## Documentation and Lab Standard
 
-### Quality of Service
+Where applicable, material in this section aims to include:
 
-Traffic classification, marking, queuing, policing, shaping, congestion management, and evidence-based validation.
+1. Scope, objectives, environment, and feature assumptions.
+2. Topology, addressing, and traffic-flow context.
+3. Configuration examples with an explanation of their purpose.
+4. Verification commands and evidence of the observed state.
+5. Troubleshooting considerations, limitations, cleanup, and regression checks.
+6. Sanitised publication configurations without credentials, licensed software images, or device-specific secrets.
 
-### Security
+Commands and feature behaviour can differ across IOS, IOS XE, ASA, NX-OS, hardware platforms, virtual images, and software releases. Each guide should therefore identify its tested environment and avoid presenting an educational topology as a production reference design.
 
-Device hardening, management access, AAA, access control, control-plane protection, infrastructure security, VPN security, and Cisco ASA topics.
+## Planned Expansion
 
-### Wireless
+The following areas are planned but should not be treated as currently published modules:
 
-Cisco wireless architecture, controller and access-point concepts, WLAN configuration, client connectivity, security, monitoring, and troubleshooting.
-
-### Data-Centre Networking
-
-Cisco Nexus and NX-OS operations, data-centre switching, virtualisation-related network features, resilient designs, and platform-specific troubleshooting.
-
-### Software-Defined Networking and Automation
-
-Controller-based networking, APIs, Python, Ansible, NETCONF, RESTCONF, YANG, telemetry, repeatable configuration, and automated validation.
-
-### Tools and Lab Platforms
-
-Supporting material for EVE-NG, virtual machines, packet capture, network utilities, configuration comparison, and other tools used to build and investigate the labs.
-
-## Lab Standard
-
-Where applicable, a lab should include:
-
-1. Objectives and prerequisites.
-2. Platform, software version, and feature assumptions.
-3. Topology and addressing information.
-4. Initial state and required configuration.
-5. Complete configuration steps with explanations.
-6. Verification commands, expected behaviour, and test results.
-7. Troubleshooting evidence, root cause, correction, and regression checks.
-8. Limitations, cleanup steps, and lessons learned.
-
-Commands and feature behaviour can differ across IOS, IOS XE, NX-OS, hardware platforms, and software releases. Each guide should therefore identify the environment in which it was tested and call out known differences when relevant.
-
-## Suggested Starting Point
-
-Follow this reading order before moving into the technology-specific material:
-
-1. **Read [Warmup and Conventions](./WARMUP.md) first.** This guide establishes the conventions used throughout the Cisco Network section and introduces the basic ideas needed to follow later material, including the command-line interface (CLI), device prompts and operating modes, command syntax, and how to use the documentation, labs, and configuration files.
-2. **Continue with [Cisco Internetwork Operating System (IOS)](./Cisco%20Internet%20Operation%20System/).** This section establishes the operational foundation for working with Cisco devices, including system architecture, filesystems, boot behaviour, access, configuration management, monitoring, diagnostics, and recovery.
-
-After completing these two starting points, continue to the switching, routing, multicast, security, wireless, data-centre, or automation material relevant to the topic being studied.
+- Switching, Layer 2 protection, EtherChannel, and spanning-tree labs.
+- Additional routing protocols, redistribution, path selection, and failure testing.
+- Network services, management-plane security, AAA, monitoring, and telemetry.
+- WAN, MPLS, VPN, QoS, wireless, and data-centre networking.
+- Python, Ansible, NETCONF, RESTCONF, YANG, and automated validation.
+- Focused multicast configuration and troubleshooting labs.
+- Incremental security, resilience, observability, and automation improvements built on the baseline Campus Network lab.
 
 ## Disclaimer
 
-This material is intended for education and lab use. Review and adapt every configuration before using it in a production environment. Cisco product names and trademarks belong to their respective owners.
+This material is intended for education and isolated lab use. Review addressing, security policy, licensing, platform support, and release-specific syntax before adapting any configuration to another environment. Cisco product names and trademarks belong to their respective owners.
