@@ -28,6 +28,8 @@ Device and operating-system fundamentals that support everyday administration: I
 
 Network models, forwarding behaviour, addressing, device roles, campus and enterprise architecture, and the design principles required to understand later labs.
 
+- [Small Campus Network: Baseline Design and Configuration](./Campus%20Network/) — a layered access-to-ASA lab covering VLANs, dual-homed access, Rapid PVST+, HSRP, DHCP, OSPF, dynamic NAT, and two simulated ISP paths.
+
 ### Switching
 
 Ethernet switching, VLANs, trunks, EtherChannel, spanning tree, Layer 2 protection, and the verification and troubleshooting of common campus switching problems.
@@ -37,7 +39,7 @@ Ethernet switching, VLANs, trunks, EtherChannel, spanning tree, Layer 2 protecti
 IPv4 and IPv6 forwarding, static routing, route selection, redistribution, and dynamic routing with RIP, EIGRP, OSPF, IS-IS, and BGP.
 
 - [IPv4 Directed Broadcast on Cisco IOS](./IP%20Routing/Directed%20Broadcast.md) — last-hop broadcast conversion, default security behaviour, ACL control, packet-capture verification, and rollback.
-- [Routing Policy Matching on Cisco IOS](./IP%20Routing/Routing%20Policies/) — wildcard masks, ACLs, prefix lists, route maps, BGP AS-path matching, offset lists, and Policy-Based Routing.
+- [Routing Policy Matching on Cisco IOS](./IP%20Routing/Routing%20Policies.md) — wildcard masks, ACLs, prefix lists, route maps, BGP AS-path matching, offset lists, and Policy-Based Routing.
 
 ### Network Services and System Management
 

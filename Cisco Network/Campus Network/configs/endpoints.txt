@@ -1,0 +1,13 @@
+# All eight VPCS nodes use DHCP in the current baseline.
+#
+# Node-to-port and VLAN mapping:
+# PC1     -> SW1 Gi0/2 -> VLAN 10
+# PC2     -> SW1 Gi0/3 -> VLAN 20
+# PC3     -> SW2 Gi0/2 -> VLAN 20
+# Server1 -> SW2 Gi0/3 -> VLAN 30
+# PC5     -> SW3 Gi0/2 -> VLAN 10
+# Server2 -> SW3 Gi0/3 -> VLAN 30
+# PC7     -> SW4 Gi0/2 -> VLAN 10
+# PC8     -> SW4 Gi0/3 -> VLAN 20
+
+dhcp
