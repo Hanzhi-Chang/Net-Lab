@@ -19,7 +19,7 @@ Writing a configuration is only one part of network engineering. For that reason
 
 ## Project Scope
 
-### Cisco Networking
+### [Cisco Networking](./Cisco%20Network/)
 
 This is currently the main area of the repository. Planned topics include:
 
@@ -35,6 +35,10 @@ This is currently the main area of the repository. Planned topics include:
 - Cisco Nexus and data-centre networking
 - Software-defined networking and network automation
 - Python, Ansible, NETCONF, RESTCONF, YANG, and related tools
+
+Available lab:
+
+- [Small Campus Network: Baseline Design and Configuration](./Cisco%20Network/Campus%20Network/) — VLANs, redundant access uplinks, HSRP, DHCP, OSPF, ASA NAT, and simulated dual-ISP connectivity.
 
 ### Cumulus Linux
 
