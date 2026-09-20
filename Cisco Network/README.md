@@ -23,6 +23,7 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 ### IP Routing
 
 - [IPv4 Directed Broadcast on Cisco IOS](./IP%20Routing/Directed%20Broadcast.md) explains last-hop broadcast conversion, the secure default behaviour, optional ACL control, packet-capture verification, cleanup, and regression testing.
+- [DHCP Snooping and Dynamic ARP Inspection](./IP%20Routing/DAI.md) is an EVE-NG lab that validates Option 82 handling, DHCP Snooping bindings, trusted and untrusted ports, and DAI drop counters.
 - [Routing Policy Matching on Cisco IOS](./IP%20Routing/Routing%20Policies.md) compares ACLs, wildcard masks, prefix lists, route maps, BGP AS-path matching, offset lists, and Policy-Based Routing according to the object being matched and the feature consuming the result.
 
 ### IP Multicast
@@ -38,6 +39,7 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 | [`Cisco Internet Operation System/Basics/docs.md`](./Cisco%20Internet%20Operation%20System/Basics/docs.md) | Published IOS fundamentals module |
 | [`Campus Network/`](./Campus%20Network/) | Baseline campus lab, evidence, and publication configurations |
 | [`IP Routing/Directed Broadcast.md`](./IP%20Routing/Directed%20Broadcast.md) | Directed-broadcast concept and packet-capture lab |
+| [`IP Routing/DAI.md`](./IP%20Routing/DAI.md) | DHCP Snooping, Option 82, binding verification, and DAI lab |
 | [`IP Routing/Routing Policies.md`](./IP%20Routing/Routing%20Policies.md) | Routing-policy matching reference |
 | [`Multicast/`](./Multicast/) | Current multicast topic overview |
 
@@ -46,7 +48,7 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 1. Start with [Warmup and Conventions](./WARMUP.md) to understand the CLI notation used throughout the repository.
 2. Continue with [Cisco IOS Basics](./Cisco%20Internet%20Operation%20System/Basics/docs.md) for device, filesystem, boot, image, and licensing fundamentals.
 3. Work through the [Small Campus Network](./Campus%20Network/) lab to connect Layer 2 switching, first-hop redundancy, routing, DHCP, firewalling, and NAT in one topology.
-4. Use the two [IP Routing](./IP%20Routing/) guides for focused forwarding and policy study.
+4. Use the [IP Routing](./IP%20Routing/) guides for focused forwarding, DHCP Snooping, DAI, and policy study.
 5. Read the [IP Multicast](./Multicast/) overview before the future multicast configuration labs are added.
 
 ## Documentation and Lab Standard
@@ -66,7 +68,7 @@ Commands and feature behaviour can differ across IOS, IOS XE, ASA, NX-OS, hardwa
 
 The following areas are planned but should not be treated as currently published modules:
 
-- Switching, Layer 2 protection, EtherChannel, and spanning-tree labs.
+- Switching, EtherChannel, and spanning-tree labs.
 - Additional routing protocols, redistribution, path selection, and failure testing.
 - Network services, management-plane security, AAA, monitoring, and telemetry.
 - WAN, MPLS, VPN, QoS, wireless, and data-centre networking.
