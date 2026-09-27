@@ -2,7 +2,7 @@
 
 **Practical documentation and reproducible labs for configuring, operating, verifying, and troubleshooting Cisco networks.**
 
-This directory is the Cisco-focused part of Net-Lab. It currently contains CLI and IOS foundations, a complete baseline campus-network lab, focused IP-routing guides, and an IP-multicast overview. Additional material will be added progressively as it is reorganised and validated.
+This directory is the Cisco-focused part of Net-Lab. It currently contains CLI and IOS foundations, a complete baseline campus-network lab, focused IP-routing guides, and an evidence-based IGMP lab within the IP-multicast section. Additional material will be added progressively as it is reorganised and validated.
 
 The goal is not to collect commands in isolation. Each technical guide explains what a feature does, how it affects forwarding, how to verify the operational state, and which limitations or failure cases matter in a lab or production-style workflow.
 
@@ -28,7 +28,8 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 
 ### IP Multicast
 
-- [IP Multicast](./Multicast/) currently provides a structured overview of multicast addressing, IGMP, Layer 2 multicast forwarding, Reverse Path Forwarding, PIM, Rendezvous Point design and discovery, policy controls, and troubleshooting topics. Focused multicast labs will be added later.
+- [IP Multicast](./Multicast/) provides the multicast roadmap and published material for receiver membership, Layer 2 forwarding, multicast routing, PIM, Rendezvous Point design, and policy controls.
+- [IGMPv1, IGMPv2, and IGMPv3 on Cisco IOSv](./Multicast/IGMP.md) is an EVE-NG lab with captured evidence for querier election, IGMP version behaviour, static membership, group filtering, SSM source selection, and basic IGMP Snooping.
 
 ## Repository Map
 
@@ -41,7 +42,8 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 | [`IP Routing/Directed Broadcast.md`](./IP%20Routing/Directed%20Broadcast.md) | Directed-broadcast concept and packet-capture lab |
 | [`IP Routing/DAI.md`](./IP%20Routing/DAI.md) | DHCP Snooping, Option 82, binding verification, and DAI lab |
 | [`IP Routing/Routing Policies.md`](./IP%20Routing/Routing%20Policies.md) | Routing-policy matching reference |
-| [`Multicast/`](./Multicast/) | Current multicast topic overview |
+| [`Multicast/`](./Multicast/) | Multicast roadmap and published IGMP lab |
+| [`Multicast/IGMP.md`](./Multicast/IGMP.md) | Evidence-based IGMPv1, IGMPv2, IGMPv3, SSM, filtering, and Snooping lab |
 
 ## Suggested Reading Order
 
@@ -49,7 +51,7 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 2. Continue with [Cisco IOS Basics](./Cisco%20Internet%20Operation%20System/Basics/docs.md) for device, filesystem, boot, image, and licensing fundamentals.
 3. Work through the [Small Campus Network](./Campus%20Network/) lab to connect Layer 2 switching, first-hop redundancy, routing, DHCP, firewalling, and NAT in one topology.
 4. Use the [IP Routing](./IP%20Routing/) guides for focused forwarding, DHCP Snooping, DAI, and policy study.
-5. Read the [IP Multicast](./Multicast/) overview before the future multicast configuration labs are added.
+5. Read the [IP Multicast](./Multicast/) roadmap, then complete the [IGMPv1, IGMPv2, and IGMPv3](./Multicast/IGMP.md) lab.
 
 ## Documentation and Lab Standard
 
@@ -73,7 +75,7 @@ The following areas are planned but should not be treated as currently published
 - Network services, management-plane security, AAA, monitoring, and telemetry.
 - WAN, MPLS, VPN, QoS, wireless, and data-centre networking.
 - Python, Ansible, NETCONF, RESTCONF, YANG, and automated validation.
-- Focused multicast configuration and troubleshooting labs.
+- Additional multicast-routing, Rendezvous Point, failure-injection, and troubleshooting labs.
 - Incremental security, resilience, observability, and automation improvements built on the baseline Campus Network lab.
 
 ## Disclaimer

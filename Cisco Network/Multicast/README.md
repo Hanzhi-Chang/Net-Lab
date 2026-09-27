@@ -3,9 +3,15 @@
 This directory covers IP multicast from host membership and Layer 2 forwarding to multicast routing, PIM operation, Rendezvous Point design, and policy controls. The material explains how multicast delivers one stream to multiple receivers, how receivers join and leave groups, and how routers and switches build and maintain the forwarding state required to carry the traffic efficiently.
 
 > [!NOTE]
-> The study material behind this section has already been completed. It will be reorganized into focused documentation, command references, reusable configurations, and reproducible labs, which will be published progressively.
+> The study material behind this section has already been completed. The first reproducible IGMP lab is published below; additional multicast documentation, command references, configurations, and labs will be added progressively.
 
-## Main Content
+## Published Lab
+
+- [IGMPv1, IGMPv2, and IGMPv3 on Cisco IOSv](./IGMP.md) — an evidence-based EVE-NG lab covering querier election, version-specific membership behaviour, group filtering, SSM source selection, and basic IGMP Snooping.
+
+## Coverage Roadmap
+
+The topics below describe the planned scope of this section. Only material linked under **Published Lab** should be treated as a completed, reproducible lab.
 
 ### Multicast Fundamentals
 
