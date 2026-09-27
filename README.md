@@ -36,9 +36,13 @@ This is currently the main area of the repository. Planned topics include:
 - Software-defined networking and network automation
 - Python, Ansible, NETCONF, RESTCONF, YANG, and related tools
 
-Available lab:
+Available Cisco material includes:
 
 - [Small Campus Network: Baseline Design and Configuration](./Cisco%20Network/Campus%20Network/) — VLANs, redundant access uplinks, HSRP, DHCP, OSPF, ASA NAT, and simulated dual-ISP connectivity.
+- [IPv4 Directed Broadcast on Cisco IOS](./Cisco%20Network/IP%20Routing/Directed%20Broadcast.md) — forwarding controls, security considerations, ACL restriction, and packet-capture verification.
+- [DHCP Snooping and Dynamic ARP Inspection](./Cisco%20Network/IP%20Routing/DAI.md) — Option 82 handling, trusted and untrusted ports, binding-table verification, and DAI enforcement.
+- [Routing Policy Matching on Cisco IOS](./Cisco%20Network/IP%20Routing/Routing%20Policies.md) — ACL, prefix-list, route-map, AS-path, offset-list, and Policy-Based Routing matching behaviour.
+- [IGMPv1, IGMPv2, and IGMPv3 on Cisco IOSv](./Cisco%20Network/Multicast/IGMP.md) — an evidence-based EVE-NG lab covering receiver membership, querier election, version differences, SSM source selection, filtering, and IGMP Snooping.
 
 ### Cumulus Linux
 
@@ -83,9 +87,14 @@ The repository currently follows this high-level structure:
 ```text
 Net-Lab/
 ├── Cisco Network/
+│   ├── Campus Network/
+│   ├── Cisco Internet Operation System/
+│   ├── IP Routing/
+│   └── Multicast/
 ├── Linux Networking/
 │   ├── README.md
 │   ├── Kernel Packet Reception.md
+│   ├── MSS and MTU.md
 │   └── Network Configuration with NetworkManager.md
 ├── assets/
 │   ├── My-tools.md
