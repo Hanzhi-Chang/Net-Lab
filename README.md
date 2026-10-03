@@ -40,6 +40,7 @@ Available Cisco material includes:
 
 - [Small Campus Network: Baseline Design and Configuration](./Cisco%20Network/Campus%20Network/) — VLANs, redundant access uplinks, HSRP, DHCP, OSPF, ASA NAT, and simulated dual-ISP connectivity.
 - [IPv4 Directed Broadcast on Cisco IOS](./Cisco%20Network/IP%20Routing/Directed%20Broadcast.md) — forwarding controls, security considerations, ACL restriction, and packet-capture verification.
+- [OSPF Default Route Blackholing and Failover](./Cisco%20Network/IP%20Routing/OSPF%20Default%20Route%20Failover.md) — stale Type-5 default diagnosis, conditional origination, ISP-1 failover, and recovery verification.
 - [DHCP Snooping and Dynamic ARP Inspection](./Cisco%20Network/IP%20Routing/DAI.md) — Option 82 handling, trusted and untrusted ports, binding-table verification, and DAI enforcement.
 - [Routing Policy Matching on Cisco IOS](./Cisco%20Network/IP%20Routing/Routing%20Policies.md) — ACL, prefix-list, route-map, AS-path, offset-list, and Policy-Based Routing matching behaviour.
 - [IGMPv1, IGMPv2, and IGMPv3 on Cisco IOSv](./Cisco%20Network/Multicast/IGMP.md) — an evidence-based EVE-NG lab covering receiver membership, querier election, version differences, SSM source selection, filtering, and IGMP Snooping.
