@@ -16,6 +16,7 @@ The scenario was adapted from [CostiSer's Quiz #11](https://costiser.ro/2013/03/
 - Compare the original static-route correction with the behaviour of the tested IOS image.
 - Show why a NAT-created local alias can suppress a manual route and prevent interface PBR from solving the problem.
 - Verify why R1 can still resolve `192.168.1.4` through Proxy ARP after `no-alias` is configured.
+- Demonstrate that R1 loses reachability when Proxy ARP is disabled, even though R2 retains the correct static RIB/FIB path.
 
 ## Environment and Scope
 
@@ -651,8 +652,91 @@ Internet  192.168.1.4             0   5000.0002.0000  ARPA   GigabitEthernet0/0
 | --- | --- | --- |
 | Original NAT rule | NAT alias claims the translated address | Connected/local `/32` on the tested IOS |
 | `no-alias` plus `/32` route | Proxy ARP answers for a destination routed through another interface | Transit route through `172.16.23.3` |
+| `no-alias` plus `/32` route, but Proxy ARP disabled | R2 does not answer R1's ARP request | Transit route still exists, but R1 cannot deliver the frame to R2 |
 
-An optional isolated-lab test is to disable Proxy ARP temporarily on R2 `Gi0/0`, clear R1's ARP cache, repeat the ping, and then restore `ip proxy-arp`. Do not leave Proxy ARP disabled unless the endpoints have explicit routing that removes the dependency.
+### Negative Test: Disable Proxy ARP on R2
+
+This negative test isolates the remaining Layer 2 dependency. With `no-alias` configured, R2 still has the correct `/32` transit route, but R1 treats `192.168.1.4` as an on-link destination because it belongs to R1's connected `192.168.1.0/24` network. R1 therefore needs an ARP reply before it can send the Ethernet frame.
+
+Temporarily disable Proxy ARP on R2's R1-facing interface:
+
+```cisco
+R2(config)# interface GigabitEthernet0/0
+R2(config-if)# no ip proxy-arp
+
+R2(config-if)#do show ip interface GigabitEthernet0/0 | include Proxy ARP
+  Proxy ARP is disabled
+  Local Proxy ARP is disabled
+```
+
+Confirm that removing Proxy ARP did not change the NAT alias, RIB, or FIB state:
+
+```cisco
+R2#show ip aliases
+Address Type             IP Address      Port
+Interface                123.1.1.2
+Dynamic                  172.16.23.1
+Interface                172.16.23.2
+Interface                192.168.1.2
+
+R2#show ip route 192.168.1.4
+Routing entry for 192.168.1.4/32
+  Known via "static", distance 1, metric 0
+  Routing Descriptor Blocks:
+  * 172.16.23.3
+      Route metric is 0, traffic share count is 1
+
+R2#show ip cef 192.168.1.4 detail
+192.168.1.4/32, epoch 0
+  recursive via 172.16.23.3
+    attached to GigabitEthernet0/3
+```
+
+Clear R1's cached ARP entry before repeating the test. Otherwise, an entry learned while Proxy ARP was enabled could hide the dependency until it expires.
+
+```cisco
+R1#clear arp-cache
+
+R1#show ip arp 192.168.1.4
+
+R1#ping 192.168.1.4 source Loopback0
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.1.4, timeout is 2 seconds:
+Packet sent with a source address of 192.168.11.1
+.....
+Success rate is 0 percent (0/5)
+
+R1#show ip arp 192.168.1.4
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  192.168.1.4             0   Incomplete      ARPA
+```
+
+The expected failure point is ARP resolution, not the `/32` route on R2. With Proxy ARP disabled, R2 no longer replies on `Gi0/0` for `192.168.1.4`. R1 cannot resolve a destination MAC address, so the test packet never reaches R2 for routing or NAT processing.
+
+Restore Proxy ARP and repeat the same test:
+
+```cisco
+R2(config)# interface GigabitEthernet0/0
+R2(config-if)# ip proxy-arp
+R2(config-if)# end
+R2#show ip interface GigabitEthernet0/0 | include Proxy ARP
+  Proxy ARP is enabled
+  Local Proxy ARP is disabled
+
+R1# clear arp-cache
+R1#ping 192.168.1.4 source Loopback0
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.1.4, timeout is 2 seconds:
+Packet sent with a source address of 192.168.11.1
+.!!!!
+Success rate is 80 percent (4/5), round-trip min/avg/max = 2/2/3 ms
+
+R1#show ip arp 192.168.1.4
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  192.168.1.4             0   5000.0002.0000  ARPA   GigabitEthernet0/0
+```
+
+This comparison demonstrates that `no-alias` and Proxy ARP perform different functions. `no-alias` allows the static `/32` route to become the active forwarding entry on R2, while Proxy ARP allows R1 to hand an apparently on-link packet to R2. If Proxy ARP must remain disabled, R1 needs a routing design that treats `192.168.1.4` as reachable through R2 rather than directly connected.
 
 ## Root Cause
 
@@ -728,6 +812,7 @@ The retained CLI evidence covers:
 7. The absent alias and active static RIB/CEF path after `no-alias`.
 8. Request and reply translations through R2 after the correction.
 9. Proxy ARP status and R1's ARP entry for `192.168.1.4`.
+10. The negative Proxy ARP test: unchanged R2 alias/RIB/FIB state, failed R1 ARP resolution and ping, and restored reachability after Proxy ARP was re-enabled.
 
 The following artifacts were not retained and remain optional repeat-run improvements:
 
@@ -770,6 +855,7 @@ R2# clear ip nat translation *
 - A connected or local `/32` can suppress a manual static route and change a destination from transit traffic into router-local traffic.
 - Interface PBR is not a substitute for removing a local address classification.
 - NAT alias and Proxy ARP can both cause R2 to answer ARP, but their forwarding consequences are different.
+- In this addressing design, R1 still depends on R2's Proxy ARP reply; disabling Proxy ARP prevents Layer 2 delivery before routing or NAT can occur.
 - RIB, FIB, NAT state, ARP behaviour, and packet captures should be examined together when platform behaviour differs from an older reference.
 
 ## Related Lab
