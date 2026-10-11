@@ -39,6 +39,7 @@ This is currently the main area of the repository. Planned topics include:
 Available Cisco material includes:
 
 - [Small Campus Network: Baseline Design and Configuration](./Cisco%20Network/Campus%20Network/) — VLANs, redundant access uplinks, HSRP, DHCP, OSPF, ASA NAT, and simulated dual-ISP connectivity.
+- [eBGP Multihop Peering Failure over a Default Route](./Cisco%20Network/IP%20Routing/eBGP%20Multihop%20over%20a%20Default%20Route.md) — loopback-to-loopback eBGP troubleshooting, peer-route recursion, and TCP initiator verification.
 - [IPv4 Directed Broadcast on Cisco IOS](./Cisco%20Network/IP%20Routing/Directed%20Broadcast.md) — forwarding controls, security considerations, ACL restriction, and packet-capture verification.
 - [OSPF Default Route Blackholing and Failover](./Cisco%20Network/IP%20Routing/OSPF%20Default%20Route%20Failover.md) — stale Type-5 default diagnosis, conditional origination, ISP-1 failover, and recovery verification.
 - [NAT Destination-Port Redirection from Inside to Outside](./Cisco%20Network/IP%20Routing/NAT%20Port%20Redirection.md) — simultaneous inside-source PAT and outside-source static PAT for translating an external destination port.

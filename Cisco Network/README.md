@@ -22,6 +22,7 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 
 ### IP Routing
 
+- [eBGP Multihop Peering Failure over a Default Route](./IP%20Routing/eBGP%20Multihop%20over%20a%20Default%20Route.md) demonstrates why loopback-to-loopback eBGP can remain down despite ICMP reachability, then identifies the TCP initiator by reversing the peer-specific route.
 - [IPv4 Directed Broadcast on Cisco IOS](./IP%20Routing/Directed%20Broadcast.md) explains last-hop broadcast conversion, the secure default behaviour, optional ACL control, packet-capture verification, cleanup, and regression testing.
 - [OSPF Default Route Blackholing and Failover](./IP%20Routing/OSPF%20Default%20Route%20Failover.md) reproduces a stale Type-5 default advertisement, traces the resulting black hole, and validates conditional default origination during an ISP-1 failure and recovery cycle.
 - [NAT Destination-Port Redirection from Inside to Outside](./IP%20Routing/NAT%20Port%20Redirection.md) reproduces an ISP-blocked application port and shows how inside-source PAT and outside-source static PAT translate different endpoints of the same flow.
@@ -42,6 +43,7 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 | [`Cisco Internet Operation System/`](./Cisco%20Internet%20Operation%20System/) | IOS and IOS XE system-management index |
 | [`Cisco Internet Operation System/Basics/docs.md`](./Cisco%20Internet%20Operation%20System/Basics/docs.md) | Published IOS fundamentals module |
 | [`Campus Network/`](./Campus%20Network/) | Baseline campus lab, evidence, and publication configurations |
+| [`IP Routing/eBGP Multihop over a Default Route.md`](./IP%20Routing/eBGP%20Multihop%20over%20a%20Default%20Route.md) | Loopback-to-loopback eBGP initiation when the peer initially resolves only through a default route |
 | [`IP Routing/Directed Broadcast.md`](./IP%20Routing/Directed%20Broadcast.md) | Directed-broadcast concept and packet-capture lab |
 | [`IP Routing/OSPF Default Route Failover.md`](./IP%20Routing/OSPF%20Default%20Route%20Failover.md) | OSPF default-origination failure, correction, failover, and recovery lab |
 | [`IP Routing/NAT Port Redirection.md`](./IP%20Routing/NAT%20Port%20Redirection.md) | Destination-port translation with simultaneous source PAT |
