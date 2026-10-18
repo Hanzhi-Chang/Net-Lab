@@ -2,7 +2,7 @@
 
 **Practical documentation and reproducible labs for configuring, operating, verifying, and troubleshooting Cisco networks.**
 
-This directory is the Cisco-focused part of Net-Lab. It currently contains CLI and IOS foundations, a complete baseline campus-network lab, focused IP-routing guides, and an evidence-based IGMP lab within the IP-multicast section. Additional material will be added progressively as it is reorganised and validated.
+This directory is the Cisco-focused part of Net-Lab. It currently contains CLI and IOS foundations, a complete baseline campus-network lab, an MSTP switching lab, focused IP-routing guides, and an evidence-based IGMP lab within the IP-multicast section. Additional material will be added progressively as it is reorganised and validated.
 
 The goal is not to collect commands in isolation. Each technical guide explains what a feature does, how it affects forwarding, how to verify the operational state, and which limitations or failure cases matter in a lab or production-style workflow.
 
@@ -19,6 +19,10 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 - [Small Campus Network: Baseline Design and Configuration](./Campus%20Network/) builds a layered network from access switches to a Cisco ASA and two simulated ISP paths. It includes the topology, addressing plan, reusable configurations, verification evidence, known limitations, and a roadmap for later improvements.
 
   The current baseline demonstrates VLAN segmentation, dual-homed access switches, Rapid PVST+, Port Security, HSRP gateway load sharing, DHCP, inter-VLAN routing, OSPF, ASA security zones, source-specific dynamic NAT, and a verified VLAN 10 path to a simulated Internet destination.
+
+### Switching
+
+- [MSTP Region Changes and Traffic Impact](./Switching/MSTP%20Region%20Changes%20and%20Traffic%20Impact.md) is a four-switch EVE-NG lab. It maps a new VLAN to an MST instance one switch at a time and follows the temporary region splits, `Bound(RSTP)` boundary ports, and `Mstr` roles that this creates. It measures about 30 seconds of loss per stage on non-edge host ports. An MST1 control VLAN shows that the loss depends on a change of MSTI root information, not on a change of forwarding path.
 
 ### IP Routing
 
@@ -44,6 +48,7 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 | [`Cisco Internet Operation System/`](./Cisco%20Internet%20Operation%20System/) | IOS and IOS XE system-management index |
 | [`Cisco Internet Operation System/Basics/docs.md`](./Cisco%20Internet%20Operation%20System/Basics/docs.md) | Published IOS fundamentals module |
 | [`Campus Network/`](./Campus%20Network/) | Baseline campus lab, evidence, and publication configurations |
+| [`Switching/MSTP Region Changes and Traffic Impact.md`](./Switching/MSTP%20Region%20Changes%20and%20Traffic%20Impact.md) | MSTP region splits during a VLAN-to-instance mapping change, boundary behaviour, and per-instance traffic loss |
 | [`IP Routing/eBGP Multihop over a Default Route.md`](./IP%20Routing/eBGP%20Multihop%20over%20a%20Default%20Route.md) | Loopback-to-loopback eBGP initiation when the peer initially resolves only through a default route |
 | [`IP Routing/BGP Suppress-Inactive and RIB Next-Hop Matching.md`](./IP%20Routing/BGP%20Suppress-Inactive%20and%20RIB%20Next-Hop%20Matching.md) | BGP RIB-failure advertisement, inactive-route suppression, and next-hop matching in a Confederation lab |
 | [`IP Routing/Directed Broadcast.md`](./IP%20Routing/Directed%20Broadcast.md) | Directed-broadcast concept and packet-capture lab |
@@ -60,8 +65,9 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 1. Start with [Warmup and Conventions](./WARMUP.md) to understand the CLI notation used throughout the repository.
 2. Continue with [Cisco IOS Basics](./Cisco%20Internet%20Operation%20System/Basics/docs.md) for device, filesystem, boot, image, and licensing fundamentals.
 3. Work through the [Small Campus Network](./Campus%20Network/) lab to connect Layer 2 switching, first-hop redundancy, routing, DHCP, firewalling, and NAT in one topology.
-4. Use the [IP Routing](./IP%20Routing/) guides for focused forwarding, DHCP Snooping, DAI, and policy study.
-5. Read the [IP Multicast](./Multicast/) roadmap, then complete the [IGMPv1, IGMPv2, and IGMPv3](./Multicast/IGMP.md) lab.
+4. Continue with [MSTP Region Changes and Traffic Impact](./Switching/MSTP%20Region%20Changes%20and%20Traffic%20Impact.md) to study multi-instance spanning tree and the impact of MST configuration changes.
+5. Use the [IP Routing](./IP%20Routing/) guides for focused forwarding, DHCP Snooping, DAI, and policy study.
+6. Read the [IP Multicast](./Multicast/) roadmap, then complete the [IGMPv1, IGMPv2, and IGMPv3](./Multicast/IGMP.md) lab.
 
 ## Documentation and Lab Standard
 
@@ -80,7 +86,7 @@ Commands and feature behaviour can differ across IOS, IOS XE, ASA, NX-OS, hardwa
 
 The following areas are planned but should not be treated as currently published modules:
 
-- Switching, EtherChannel, and spanning-tree labs.
+- Additional switching, EtherChannel, and spanning-tree labs.
 - Additional routing protocols, redistribution, path selection, and failure testing.
 - Network services, management-plane security, AAA, monitoring, and telemetry.
 - WAN, MPLS, VPN, QoS, wireless, and data-centre networking.
