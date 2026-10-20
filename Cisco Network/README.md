@@ -32,6 +32,7 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 - [OSPF Default Route Blackholing and Failover](./IP%20Routing/OSPF%20Default%20Route%20Failover.md) reproduces a stale Type-5 default advertisement, traces the resulting black hole, and validates conditional default origination during an ISP-1 failure and recovery cycle.
 - [NAT Destination-Port Redirection from Inside to Outside](./IP%20Routing/NAT%20Port%20Redirection.md) reproduces an ISP-blocked application port and shows how inside-source PAT and outside-source static PAT translate different endpoints of the same flow.
 - [Legacy NAT Between Overlapping Networks](./IP%20Routing/NAT%20Between%20Overlapping%20Networks.md) reproduces bidirectional static NAT across overlapping address spaces and diagnoses routing order, a platform-created NAT alias, failed PBR, and Proxy ARP behaviour.
+- [Static NAT Between Two Partners Using DMZ Addresses](./IP%20Routing/NAT%20Between%20Partners%20Using%20DMZ%20Addresses.md) connects two overlapping partner networks through borrowed DMZ addresses without enabling NAT on the DMZ interface. It compares an inside/outside design with a host route and `no-alias` against an outside-only design with four static mappings. It also verifies that existing DMZ traffic is not translated, and separates documented Cisco behaviour from behaviour observed only on the tested image.
 - [DHCP Snooping and Dynamic ARP Inspection](./IP%20Routing/DAI.md) is an EVE-NG lab that validates Option 82 handling, DHCP Snooping bindings, trusted and untrusted ports, and DAI drop counters.
 - [Routing Policy Matching on Cisco IOS](./IP%20Routing/Routing%20Policies.md) compares ACLs, wildcard masks, prefix lists, route maps, BGP AS-path matching, offset lists, and Policy-Based Routing according to the object being matched and the feature consuming the result.
 
@@ -55,6 +56,7 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 | [`IP Routing/OSPF Default Route Failover.md`](./IP%20Routing/OSPF%20Default%20Route%20Failover.md) | OSPF default-origination failure, correction, failover, and recovery lab |
 | [`IP Routing/NAT Port Redirection.md`](./IP%20Routing/NAT%20Port%20Redirection.md) | Destination-port translation with simultaneous source PAT |
 | [`IP Routing/NAT Between Overlapping Networks.md`](./IP%20Routing/NAT%20Between%20Overlapping%20Networks.md) | Bidirectional static NAT, order of operations, NAT alias, PBR, and Proxy ARP troubleshooting |
+| [`IP Routing/NAT Between Partners Using DMZ Addresses.md`](./IP%20Routing/NAT%20Between%20Partners%20Using%20DMZ%20Addresses.md) | Partner-to-partner static NAT through borrowed DMZ addresses, NAT alias route suppression, `no-alias`, and outside-only NAT |
 | [`IP Routing/DAI.md`](./IP%20Routing/DAI.md) | DHCP Snooping, Option 82, binding verification, and DAI lab |
 | [`IP Routing/Routing Policies.md`](./IP%20Routing/Routing%20Policies.md) | Routing-policy matching reference |
 | [`Multicast/`](./Multicast/) | Multicast roadmap and published IGMP lab |
