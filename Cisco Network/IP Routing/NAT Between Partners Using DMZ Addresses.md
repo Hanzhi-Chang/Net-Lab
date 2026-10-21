@@ -43,7 +43,7 @@ Platform-generated boilerplate and unused shutdown interfaces are omitted from t
 
 ## Topology
 
-![EVE-NG topology for static NAT between two partners using DMZ addresses](./assets/nat-partner-dmz-topology.png)
+![image-20261021164512368](./assets/image-20261021164512368.png)
 
 | Device | Interface | Address | Role |
 | --- | --- | --- | --- |
