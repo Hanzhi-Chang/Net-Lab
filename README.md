@@ -49,6 +49,7 @@ Available Cisco material includes:
 - [DHCP Snooping and Dynamic ARP Inspection](./Cisco%20Network/IP%20Routing/DAI.md) — Option 82 handling, trusted and untrusted ports, binding-table verification, and DAI enforcement.
 - [Routing Policy Matching on Cisco IOS](./Cisco%20Network/IP%20Routing/Routing%20Policies.md) — ACL, prefix-list, route-map, AS-path, offset-list, and Policy-Based Routing matching behaviour.
 - [IGMPv1, IGMPv2, and IGMPv3 on Cisco IOSv](./Cisco%20Network/Multicast/IGMP.md) — an evidence-based EVE-NG lab covering receiver membership, querier election, version differences, SSM source selection, filtering, and IGMP Snooping.
+- [Inter-Domain Multicast with BSR, MSDP, and MBGP](./Cisco%20Network/Multicast/Inter-Domain%20Multicast%20with%20MSDP%20and%20MBGP.md) — a two-AS EVE-NG lab with per-domain BSR and RP, BSR borders, MSDP between the RPs, MBGP RPF, primary and backup inter-AS paths, and HSRP/DR control of the source path.
 
 ### Cumulus Linux
 

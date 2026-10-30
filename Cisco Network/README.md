@@ -2,7 +2,7 @@
 
 **Practical documentation and reproducible labs for configuring, operating, verifying, and troubleshooting Cisco networks.**
 
-This directory is the Cisco-focused part of Net-Lab. It currently contains CLI and IOS foundations, a complete baseline campus-network lab, an MSTP switching lab, focused IP-routing guides, and an evidence-based IGMP lab within the IP-multicast section. Additional material will be added progressively as it is reorganised and validated.
+This directory is the Cisco-focused part of Net-Lab. It currently contains CLI and IOS foundations, a complete baseline campus-network lab, an MSTP switching lab, focused IP-routing guides, and evidence-based IGMP and inter-domain multicast labs within the IP-multicast section. Additional material will be added progressively as it is reorganised and validated.
 
 The goal is not to collect commands in isolation. Each technical guide explains what a feature does, how it affects forwarding, how to verify the operational state, and which limitations or failure cases matter in a lab or production-style workflow.
 
@@ -40,6 +40,7 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 
 - [IP Multicast](./Multicast/) provides the multicast roadmap and published material for receiver membership, Layer 2 forwarding, multicast routing, PIM, Rendezvous Point design, and policy controls.
 - [IGMPv1, IGMPv2, and IGMPv3 on Cisco IOSv](./Multicast/IGMP.md) is an EVE-NG lab with captured evidence for querier election, IGMP version behaviour, static membership, group filtering, SSM source selection, and basic IGMP Snooping.
+- [Inter-Domain Multicast with BSR, MSDP, and MBGP](./Multicast/Inter-Domain%20Multicast%20with%20MSDP%20and%20MBGP.md) is a two-AS EVE-NG lab in which separate PIM-SM domains exchange a source through MSDP, use MBGP for RPF, keep BSR messages inside each AS, and steer traffic over a primary inter-AS path.
 
 ## Repository Map
 
@@ -59,8 +60,9 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 | [`IP Routing/NAT Between Partners Using DMZ Addresses.md`](./IP%20Routing/NAT%20Between%20Partners%20Using%20DMZ%20Addresses.md) | Partner-to-partner static NAT through borrowed DMZ addresses, NAT alias route suppression, `no-alias`, and outside-only NAT |
 | [`IP Routing/DAI.md`](./IP%20Routing/DAI.md) | DHCP Snooping, Option 82, binding verification, and DAI lab |
 | [`IP Routing/Routing Policies.md`](./IP%20Routing/Routing%20Policies.md) | Routing-policy matching reference |
-| [`Multicast/`](./Multicast/) | Multicast roadmap and published IGMP lab |
+| [`Multicast/`](./Multicast/) | Multicast roadmap and published labs |
 | [`Multicast/IGMP.md`](./Multicast/IGMP.md) | Evidence-based IGMPv1, IGMPv2, IGMPv3, SSM, filtering, and Snooping lab |
+| [`Multicast/Inter-Domain Multicast with MSDP and MBGP.md`](./Multicast/Inter-Domain%20Multicast%20with%20MSDP%20and%20MBGP.md) | Two-AS PIM-SM lab with BSR borders, MSDP, MBGP RPF, path policy, and HSRP/DR source-path control |
 
 ## Suggested Reading Order
 
@@ -69,7 +71,7 @@ The goal is not to collect commands in isolation. Each technical guide explains 
 3. Work through the [Small Campus Network](./Campus%20Network/) lab to connect Layer 2 switching, first-hop redundancy, routing, DHCP, firewalling, and NAT in one topology.
 4. Continue with [MSTP Region Changes and Traffic Impact](./Switching/MSTP%20Region%20Changes%20and%20Traffic%20Impact.md) to study multi-instance spanning tree and the impact of MST configuration changes.
 5. Use the [IP Routing](./IP%20Routing/) guides for focused forwarding, DHCP Snooping, DAI, and policy study.
-6. Read the [IP Multicast](./Multicast/) roadmap, then complete the [IGMPv1, IGMPv2, and IGMPv3](./Multicast/IGMP.md) lab.
+6. Read the [IP Multicast](./Multicast/) roadmap, then complete the [IGMPv1, IGMPv2, and IGMPv3](./Multicast/IGMP.md) and [Inter-Domain Multicast](./Multicast/Inter-Domain%20Multicast%20with%20MSDP%20and%20MBGP.md) labs.
 
 ## Documentation and Lab Standard
 
